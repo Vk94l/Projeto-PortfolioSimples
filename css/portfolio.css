@@ -1,0 +1,288 @@
+/* === ARQUIVO: portfolio.css === */
+
+/* 1. VARIÁVEIS E RESET GERAL */
+:root {
+  --primary-color: #005f99; /* Azul Profissional */
+  --secondary-color: #e6f7ff; /* Azul Claro */
+  --text-color: #3a3a3a;
+  --bg-color: #f4f7f6;
+  --card-bg-color: #ffffff;
+  --header-bg: #ffffff;
+  --footer-bg: #2c3e50; /* Azul Marinho Escuro */
+  --footer-text-color: #ecf0f1;
+  --font-heading: "Style Script", cursive; /* Mantido se quiser usar em algum lugar */
+  --font-body: "Roboto", sans-serif;
+  --font-special: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.7; /* Aumentado para melhor legibilidade */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 2. HEADER E NAVEGAÇÃO */
+header {
+  background-color: var(--header-bg);
+  padding: 10px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-size: 2rem;
+  color: #333;
+}
+header nav ul {
+  display: flex;
+  gap: 35px;
+}
+header nav a {
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+}
+header nav a:hover {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* 3. SEÇÕES GERAIS */
+#hero,
+#sobre-mim,
+#projetos,
+#funcionalidades,
+#contato,
+#privacy-policy {
+  padding: 80px 20px;
+}
+#sobre-mim {
+  background-color: #fff;
+}
+#hero {
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+#hero h2,
+#sobre-mim h2 {
+  font-size: 2.8rem;
+  font-family: var(--font-special);
+  margin-bottom: 10px;
+  text-align: center;
+}
+#sobre-mim h2 {
+  color: var(--primary-color);
+}
+#hero p,
+#sobre-mim p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+#sobre-mim .subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+#projetos h3,
+#funcionalidades h3,
+#contato h3,
+#privacy-policy h3 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-family: var(--font-special);
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* 4. CARDS (PROJETOS E FUNCIONALIDADES) */
+.projects-grid,
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+.project-card,
+.feature-card {
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover,
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+.project-card img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+.project-card h4,
+.feature-card h4 {
+  font-size: 1.4rem;
+  padding: 20px 20px 10px 20px;
+}
+.project-card p,
+.feature-card p {
+  font-size: 1rem;
+  padding: 0 20px 20px 20px;
+  flex-grow: 1;
+}
+.tech-list {
+  padding: 15px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tech-list li {
+  background-color: #eef1f5;
+  color: #555;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.project-links {
+  padding: 20px;
+  margin-top: auto;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 15px;
+}
+.project-button,
+.project-button-secondary,
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+.project-button,
+.cta-button {
+  background: var(--primary-color);
+  color: #fff;
+}
+.project-button:hover,
+.cta-button:hover {
+  background-color: #004a7a;
+  transform: translateY(-2px);
+}
+.project-button-secondary {
+  background: #fff;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.project-button-secondary:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* 5. FOOTER */
+footer {
+  background-color: var(--footer-bg);
+  padding: 40px 0;
+  color: var(--footer-text-color);
+  text-align: center;
+}
+
+/* 6. LAYOUT DE PÁGINAS INTERNAS (PRIVACIDADE) */
+body.subpage main {
+  padding-top: 60px; /* Adiciona espaço no topo para o header fixo */
+  padding-bottom: 60px; /* Adiciona espaço embaixo */
+}
+
+#privacy-policy {
+  background-color: #fff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Container para o texto da política de privacidade */
+.text-content-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.text-content-container h4 {
+  font-family: var(--font-special);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-top: 40px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.text-content-container h5 {
+  font-family: var(--font-special);
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.text-content-container ul {
+  list-style-type: disc; /* Estilo de bolinha para listas */
+  padding-left: 40px; /* Espaçamento interno da lista */
+  margin-bottom: 15px;
+}
+
+.text-content-container ul li {
+  margin-bottom: 10px;
+}
+
+.text-content-container hr {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
